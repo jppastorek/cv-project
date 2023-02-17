@@ -17,6 +17,10 @@ const Personal = (props) => {
         </div>
       </div>
       <div className="input">
+        <label htmlFor="title">Title</label>
+        <input type="email" id="title" placeholder="Job Title" />
+      </div>
+      <div className="input">
         <label htmlFor="email">Email</label>
         <input type="email" id="email" placeholder="johndoe@example.com" />
       </div>
