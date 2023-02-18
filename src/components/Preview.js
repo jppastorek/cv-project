@@ -28,8 +28,13 @@ const Preview = (props) => {
           </div>
         </div>
         <div className="sidebar">
+          <div className="img">
+            <img src="" alt="profile" />
+          </div>
+          <div className="sidebar-text">
           <h4>Personal</h4>
           <hr />
+          </div>
         </div>
       </div>
     </>

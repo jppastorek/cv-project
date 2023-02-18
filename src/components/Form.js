@@ -115,9 +115,11 @@ const Form = (props) => {
 
   return (
     <>
-      <Personal />
-      <Work />
-      <Education />
+      <div className="form">
+        <Personal />
+        <Work />
+        <Education />
+      </div>
     </>
   );
 };

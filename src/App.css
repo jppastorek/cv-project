@@ -41,7 +41,7 @@ header {
 
 form {
     margin: 20px auto;
-    padding: 20px 10px;
+    padding: 20px 20px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,8 @@ button[type="submit"]:hover {
     background-color: white;
     border: 1px solid black;
     border-radius: 4px;
-    max-width: 500px;
+    width: 612px;
+    height: 791px;
     margin: 10px auto;
 }
 
@@ -111,7 +112,7 @@ button[type="submit"]:hover {
     padding: 20px;
 }
 
-.work, .education, .description, .sidebar>h4 {
+.work, .education, .description, .sidebar-text {
     color: rgb(17,17,124);
     margin-bottom: 20px;
 }
@@ -120,5 +121,31 @@ button[type="submit"]:hover {
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: rgb(231, 231, 231);
+}
+
+.sidebar-text {
     padding: 20px;
+}
+
+.img {
+    height: 175px;
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1112px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .form {
+        grid-column: 1/2;
+    }
+
+    .preview {
+        grid-column: 2/3;
+    }
 }
