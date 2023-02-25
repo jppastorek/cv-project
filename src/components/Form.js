@@ -4,14 +4,14 @@ import Work from "./Work";
 import Education from "./Education";
 
 const Form = (props) => {
-  //some code
+  const { submitPersonal, submitEducation, submitWork } = props;
 
   return (
     <>
       <div className="form">
-        <Personal />
-        <Work />
-        <Education />
+        <Personal submitPersonal={submitPersonal} />
+        <Work submitWork={submitWork} />
+        <Education submitEducation={submitEducation} />
       </div>
     </>
   );

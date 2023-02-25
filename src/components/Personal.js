@@ -57,6 +57,7 @@ class Personal extends Component {
     })
   }
 
+
   render() {
     const { first, last, title, email, tel, website, about } = this.state;
     return (
@@ -89,7 +90,7 @@ class Personal extends Component {
         <div className="input">
           <label htmlFor="title">Title</label>
           <input
-            type="email"
+            type="text"
             id="title"
             name="title"
             placeholder="Job Title"
@@ -139,7 +140,7 @@ class Personal extends Component {
             onChange={this.handleChangeAbout}
           />
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" onClick={this.handleClick}>Save</button>
       </form>
     );
   }
