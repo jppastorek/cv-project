@@ -21,6 +21,42 @@ class Personal extends Component {
     })
   }
 
+  handleChangeLast = (e) => {
+    this.setState({
+      last: e.target.value
+    })
+  }
+
+  handleChangeTitle = (e) => {
+    this.setState({
+      title: e.target.value
+    })
+  }
+
+  handleChangeEmail = (e) => {
+    this.setState({
+      email: e.target.value
+    })
+  }
+
+  handleChangeTel = (e) => {
+    this.setState({
+      tel: e.target.value
+    })
+  }
+
+  handleChangeWebsite = (e) => {
+    this.setState({
+      website: e.target.value
+    })
+  }
+
+  handleChangeAbout = (e) => {
+    this.setState({
+      about: e.target.value
+    })
+  }
+
   render() {
     const { first, last, title, email, tel, website, about } = this.state;
     return (
@@ -46,6 +82,7 @@ class Personal extends Component {
               name="last"
               placeholder="Doe"
               value={last}
+              onChange={this.handleChangeLast}
             />
           </div>
         </div>
@@ -57,6 +94,7 @@ class Personal extends Component {
             name="title"
             placeholder="Job Title"
             value={title}
+            onChange={this.handleChangeTitle}
           />
         </div>
         <div className="input">
@@ -67,6 +105,7 @@ class Personal extends Component {
             name="email"
             placeholder="johndoe@example.com"
             value={email}
+            onChange={this.handleChangeEmail}
           />
         </div>
         <div className="input">
@@ -77,6 +116,7 @@ class Personal extends Component {
             name="tel"
             placeholder="555-555-5555"
             value={tel}
+            onChange={this.handleChangeTel}
           />
         </div>
         <div className="input">
@@ -87,6 +127,7 @@ class Personal extends Component {
             name="website"
             placeholder="www.example.com"
             value={website}
+            onChange={this.handleChangeWebsite}
           />
         </div>
         <div className="input">
@@ -95,6 +136,7 @@ class Personal extends Component {
             name="about"
             placeholder="Write a short description about yourself..."
             value={about}
+            onChange={this.handleChangeAbout}
           />
         </div>
         <button type="submit">Save</button>
