@@ -20,6 +20,24 @@ class App extends Component {
           website: "",
           about: "",
         },
+        work: {
+          job: {
+            title: "",
+            company: "",
+            from: "",
+            to: "",
+          },
+          jobs: [],
+        },
+        education: {
+          degree: {
+            degree: "",
+            school: "",
+            subject: "",
+            year: "",
+          },
+          degrees: [],
+        },
       },
       preview: {
         personal: {
@@ -31,6 +49,18 @@ class App extends Component {
           website: "",
           about: "",
         },
+        work: {
+          // job: {
+          //   title: "",
+          //   company: "", is any of this necessary? Preview doesn't need to know these things, just show what's in jobs, right?
+          //   from: "",
+          //   to: "",
+          // },
+          jobs: [],
+        },
+        education: {
+          degrees: [],
+        },
       },
     };
   }
@@ -41,6 +71,12 @@ class App extends Component {
       preview: {
         personal: {
           ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.preview.work,
+        },
+        education: {
+          ...this.state.preview.education,
         },
       },
     });
@@ -61,6 +97,12 @@ class App extends Component {
           ...this.state.editor.personal,
           first: e.target.value,
         },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+        },
       },
     });
   };
@@ -71,6 +113,12 @@ class App extends Component {
         personal: {
           ...this.state.editor.personal,
           last: e.target.value,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
         },
       },
     });
@@ -83,6 +131,12 @@ class App extends Component {
           ...this.state.editor.personal,
           title: e.target.value,
         },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+        },
       },
     });
   };
@@ -93,6 +147,12 @@ class App extends Component {
         personal: {
           ...this.state.editor.personal,
           email: e.target.value,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
         },
       },
     });
@@ -105,6 +165,12 @@ class App extends Component {
           ...this.state.editor.personal,
           tel: e.target.value,
         },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+        },
       },
     });
   };
@@ -115,6 +181,12 @@ class App extends Component {
         personal: {
           ...this.state.editor.personal,
           website: e.target.value,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
         },
       },
     });
@@ -127,9 +199,18 @@ class App extends Component {
           ...this.state.editor.personal,
           about: e.target.value,
         },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+        },
       },
     });
   };
+
+  //is there a way I can do just one single handleChange and pass values to grab which input it is inside of, which will then change the corresponding property of state?
+  //man that would be so cool and DRY
 
   render() {
     const { editor, preview } = this.state;
