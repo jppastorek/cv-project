@@ -11,22 +11,26 @@ class App extends Component {
 
     this.state = {
       editor: {
-        first: "",
-        last: "",
-        title: "",
-        email: "",
-        tel: "",
-        website: "",
-        about: "",
+        personal: {
+          first: "",
+          last: "",
+          title: "",
+          email: "",
+          tel: "",
+          website: "",
+          about: "",
+        },
       },
       preview: {
-        first: "",
-        last: "",
-        title: "",
-        email: "",
-        tel: "",
-        website: "",
-        about: "",
+        personal: {
+          first: "",
+          last: "",
+          title: "",
+          email: "",
+          tel: "",
+          website: "",
+          about: "",
+        },
       },
     };
   }
@@ -34,7 +38,11 @@ class App extends Component {
   onSubmitPersonal = (e) => {
     e.preventDefault();
     this.setState({
-      preview: { ...this.state.editor },
+      preview: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+      },
     });
   };
 
@@ -49,8 +57,10 @@ class App extends Component {
   handleChangeFirst = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        first: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          first: e.target.value,
+        },
       },
     });
   };
@@ -58,8 +68,10 @@ class App extends Component {
   handleChangeLast = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        last: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          last: e.target.value,
+        },
       },
     });
   };
@@ -67,8 +79,10 @@ class App extends Component {
   handleChangeTitle = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        title: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          title: e.target.value,
+        },
       },
     });
   };
@@ -76,8 +90,10 @@ class App extends Component {
   handleChangeEmail = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        email: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          email: e.target.value,
+        },
       },
     });
   };
@@ -85,8 +101,10 @@ class App extends Component {
   handleChangeTel = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        tel: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          tel: e.target.value,
+        },
       },
     });
   };
@@ -94,8 +112,10 @@ class App extends Component {
   handleChangeWebsite = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        website: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          website: e.target.value,
+        },
       },
     });
   };
@@ -103,8 +123,10 @@ class App extends Component {
   handleChangeAbout = (e) => {
     this.setState({
       editor: {
-        ...this.state.editor,
-        about: e.target.value,
+        personal: {
+          ...this.state.editor.personal,
+          about: e.target.value,
+        },
       },
     });
   };
@@ -126,22 +148,22 @@ class App extends Component {
             handleChangeTel={this.handleChangeTel}
             handleChangeWebsite={this.handleChangeWebsite}
             handleChangeAbout={this.handleChangeAbout}
-            firstValue={editor.first}
-            lastValue={editor.last}
-            titleValue={editor.title}
-            emailValue={editor.email}
-            telValue={editor.tel}
-            websiteValue={editor.website}
-            aboutValue={editor.about}
+            firstValue={editor.personal.first}
+            lastValue={editor.personal.last}
+            titleValue={editor.personal.title}
+            emailValue={editor.personal.email}
+            telValue={editor.personal.tel}
+            websiteValue={editor.personal.website}
+            aboutValue={editor.personal.about}
           />
           <Preview
-            first={preview.first}
-            last={preview.last}
-            title={preview.title}
-            email={preview.email}
-            tel={preview.tel}
-            website={preview.website}
-            about={preview.about}
+            first={preview.personal.first}
+            last={preview.personal.last}
+            title={preview.personal.title}
+            email={preview.personal.email}
+            tel={preview.personal.tel}
+            website={preview.personal.website}
+            about={preview.personal.about}
           />
         </div>
       </>

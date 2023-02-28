@@ -25,7 +25,6 @@ const Form = (props) => {
   } = props;
 
   return (
-    <>
       <div className="form">
         <Personal
           submitPersonal={submitPersonal}
@@ -47,7 +46,6 @@ const Form = (props) => {
         <Work submitWork={submitWork} />
         <Education submitEducation={submitEducation} />
       </div>
-    </>
   );
 };
 
