@@ -15,6 +15,11 @@ const Form = (props) => {
     handleChangeTel,
     handleChangeWebsite,
     handleChangeAbout,
+    handleChangeJobTitle,
+    handleChangeCompany,
+    handleChangeFrom,
+    handleChangeTo,
+    handleChangeDescription,
     firstValue,
     lastValue,
     titleValue,
@@ -22,30 +27,47 @@ const Form = (props) => {
     telValue,
     websiteValue,
     aboutValue,
+    jobTitleValue,
+    companyValue,
+    fromValue,
+    toValue,
+    descriptionValue,
   } = props;
 
   return (
-      <div className="form">
-        <Personal
-          submitPersonal={submitPersonal}
-          handleChangeFirst={handleChangeFirst}
-          handleChangeLast={handleChangeLast}
-          handleChangeTitle={handleChangeTitle}
-          handleChangeEmail={handleChangeEmail}
-          handleChangeTel={handleChangeTel}
-          handleChangeWebsite={handleChangeWebsite}
-          handleChangeAbout={handleChangeAbout}
-          firstValue={firstValue}
-          lastValue={lastValue}
-          titleValue={titleValue}
-          emailValue={emailValue}
-          telValue={telValue}
-          websiteValue={websiteValue}
-          aboutValue={aboutValue}
-        />
-        <Work submitWork={submitWork} />
-        <Education submitEducation={submitEducation} />
-      </div>
+    <div className="form">
+      <Personal
+        submitPersonal={submitPersonal}
+        handleChangeFirst={handleChangeFirst}
+        handleChangeLast={handleChangeLast}
+        handleChangeTitle={handleChangeTitle}
+        handleChangeEmail={handleChangeEmail}
+        handleChangeTel={handleChangeTel}
+        handleChangeWebsite={handleChangeWebsite}
+        handleChangeAbout={handleChangeAbout}
+        firstValue={firstValue}
+        lastValue={lastValue}
+        titleValue={titleValue}
+        emailValue={emailValue}
+        telValue={telValue}
+        websiteValue={websiteValue}
+        aboutValue={aboutValue}
+      />
+      <Work
+        submitWork={submitWork}
+        handleChangeJobTitle={handleChangeJobTitle}
+        handleChangeCompany={handleChangeCompany}
+        handleChangeFrom={handleChangeFrom}
+        handleChangeTo={handleChangeTo}
+        handleChangeDescription={handleChangeDescription}
+        jobTitleValue={jobTitleValue}
+        companyValue={companyValue}
+        fromValue={fromValue}
+        toValue={toValue}
+        descriptionValue={descriptionValue}
+      />
+      <Education submitEducation={submitEducation} />
+    </div>
   );
 };
 

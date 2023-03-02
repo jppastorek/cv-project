@@ -26,6 +26,8 @@ class App extends Component {
             company: "",
             from: "",
             to: "",
+            description: "",
+            id: uniqid(),
           },
           jobs: [],
         },
@@ -50,12 +52,6 @@ class App extends Component {
           about: "",
         },
         work: {
-          // job: {
-          //   title: "",
-          //   company: "", is any of this necessary? Preview doesn't need to know these things, just show what's in jobs, right?
-          //   from: "",
-          //   to: "",
-          // },
           jobs: [],
         },
         education: {
@@ -88,6 +84,38 @@ class App extends Component {
 
   onSubmitWork = (e) => {
     e.preventDefault();
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          jobs: this.state.editor.work.jobs.concat(this.state.editor.work.job),
+          job: {
+            title: "",
+            company: "",
+            from: "",
+            to: "",
+            description: "",
+            id: uniqid(),
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+      preview: {
+        personal: {
+          ...this.state.preview.personal,
+        },
+        work: {
+          jobs: this.state.editor.work.jobs.concat(this.state.editor.work.job),
+        },
+        education: {
+          ...this.state.preview.education,
+        },
+      },
+    });
   };
 
   handleChangeFirst = (e) => {
@@ -209,6 +237,106 @@ class App extends Component {
     });
   };
 
+  handleChangeJobTitle = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+          job: {
+            ...this.state.editor.work.job,
+            title: e.target.value,
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+    });
+  };
+
+  handleChangeCompany = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+          job: {
+            ...this.state.editor.work.job,
+            company: e.target.value,
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+    });
+  };
+
+  handleChangeFrom = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+          job: {
+            ...this.state.editor.work.job,
+            from: e.target.value,
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+    });
+  };
+
+  handleChangeTo = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+          job: {
+            ...this.state.editor.work.job,
+            to: e.target.value,
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+    });
+  };
+
+  handleChangeDescription = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+          job: {
+            ...this.state.editor.work.job,
+            description: e.target.value,
+          },
+        },
+        education: {
+          ...this.state.editor.education,
+        },
+      },
+    });
+  };
+
   //is there a way I can do just one single handleChange and pass values to grab which input it is inside of, which will then change the corresponding property of state?
   //man that would be so cool and DRY
 
@@ -229,6 +357,11 @@ class App extends Component {
             handleChangeTel={this.handleChangeTel}
             handleChangeWebsite={this.handleChangeWebsite}
             handleChangeAbout={this.handleChangeAbout}
+            handleChangeJobTitle={this.handleChangeJobTitle}
+            handleChangeCompany={this.handleChangeCompany}
+            handleChangeFrom={this.handleChangeFrom}
+            handleChangeTo={this.handleChangeTo}
+            handleChangeDescription={this.handleChangeDescription}
             firstValue={editor.personal.first}
             lastValue={editor.personal.last}
             titleValue={editor.personal.title}
@@ -236,6 +369,11 @@ class App extends Component {
             telValue={editor.personal.tel}
             websiteValue={editor.personal.website}
             aboutValue={editor.personal.about}
+            jobTitleValue={editor.work.job.title}
+            companyValue={editor.work.job.company}
+            fromValue={editor.work.job.from}
+            toValue={editor.work.job.to}
+            descriptionValue={editor.work.job.description}
           />
           <Preview
             first={preview.personal.first}
