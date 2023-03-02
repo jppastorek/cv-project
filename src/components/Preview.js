@@ -4,13 +4,15 @@ import React from "react";
 //each section will have an edit button that populates the form with those values to change
 
 const Preview = (props) => {
-  const { first, last, title, email, tel, website, about } = props;
+  const { first, last, title, email, tel, website, about, jobs } = props;
 
   return (
     <>
       <div className="preview">
         <div className="header">
-          <h1 id="header-name">{first} {last}</h1>
+          <h1 id="header-name">
+            {first} {last}
+          </h1>
           <h4 id="header-title">{title}</h4>
         </div>
         <div className="content">
@@ -22,6 +24,14 @@ const Preview = (props) => {
           <div className="work">
             <h4>Work Experience</h4>
             <hr />
+            {jobs.map((job) => {
+              return (
+                <li key={job.id}>
+                  {job.title} {job.company} {job.from} {job.to}{" "}
+                  {job.description}
+                </li>
+              );
+            })}
           </div>
           <div className="education">
             <h4>Education</h4>
@@ -33,11 +43,11 @@ const Preview = (props) => {
             <img src="" alt="profile" />
           </div>
           <div className="sidebar-text">
-          <h4>Personal</h4>
-          <hr />
-          <p>{email}</p>
-          <p>{tel}</p>
-          <p>{website}</p>
+            <h4>Personal</h4>
+            <hr />
+            <p>{email}</p>
+            <p>{tel}</p>
+            <p>{website}</p>
           </div>
         </div>
       </div>

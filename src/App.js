@@ -383,6 +383,7 @@ class App extends Component {
             tel={preview.personal.tel}
             website={preview.personal.website}
             about={preview.personal.about}
+            jobs={preview.work.jobs}
           />
         </div>
       </>

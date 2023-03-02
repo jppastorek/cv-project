@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import uniqid from "uniqid";
+import React from "react";
 
 const Work = (props) => {
   const {
@@ -15,26 +14,7 @@ const Work = (props) => {
     toValue,
     descriptionValue,
   } = props;
-  // onAddJob = (e) => {
-  //   e.preventDefault();
-  //   const job = {
-  //     title: this.state.title,
-  //     company: this.state.company,
-  //     from: this.state.from,
-  //     to: this.state.to,
-  //     description: this.state.description,
-  //     id: uniqid(),
-  //   };
-  //   this.setState({
-  //     jobs: this.state.jobs.concat(job),
-  //     title: "",
-  //     company: "",
-  //     from: "",
-  //     to: "",
-  //     description: "",
-  //     id: uniqid(),
-  //   })
-  // }
+
   return (
     <form>
       <h2>Work Experience</h2>
