@@ -4,7 +4,8 @@ import React from "react";
 //each section will have an edit button that populates the form with those values to change
 
 const Preview = (props) => {
-  const { first, last, title, email, tel, website, about, jobs } = props;
+  const { first, last, title, email, tel, website, about, jobs, degrees } =
+    props;
 
   return (
     <>
@@ -36,6 +37,13 @@ const Preview = (props) => {
           <div className="education">
             <h4>Education</h4>
             <hr />
+            {degrees.map((degree) => {
+              return (
+                <li key={degree.id}>
+                  {degree.degree} {degree.school} {degree.subject} {degree.year}
+                </li>
+              );
+            })}
           </div>
         </div>
         <div className="sidebar">

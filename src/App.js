@@ -37,6 +37,7 @@ class App extends Component {
             school: "",
             subject: "",
             year: "",
+            id: uniqid(),
           },
           degrees: [],
         },
@@ -80,6 +81,37 @@ class App extends Component {
 
   onSubmitEducation = (e) => {
     e.preventDefault();
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          degrees: this.state.editor.education.degrees.concat(this.state.editor.education.degree),
+          degree: {
+            degree: "",
+            school: "",
+            subject: "",
+            year: "",
+            id: uniqid(),
+          },
+        },
+      },
+      preview: {
+        personal: {
+          ...this.state.preview.personal,
+        },
+        work: {
+          ...this.state.preview.work,
+        },
+        education: {
+          degrees: this.state.editor.education.degrees.concat(this.state.editor.education.degree),
+        },
+      },
+    });
   };
 
   onSubmitWork = (e) => {
@@ -337,6 +369,86 @@ class App extends Component {
     });
   };
 
+  handleChangeDegree = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+          degree: {
+            ...this.state.editor.education.degree,
+            degree: e.target.value,
+          },
+        },
+      },
+    });
+  };
+
+  handleChangeSchool = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+          degree: {
+            ...this.state.editor.education.degree,
+            school: e.target.value,
+          },
+        },
+      },
+    });
+  };
+
+  handleChangeYear = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+          degree: {
+            ...this.state.editor.education.degree,
+            year: e.target.value,
+          },
+        },
+      },
+    });
+  };
+
+  handleChangeSubject = (e) => {
+    this.setState({
+      editor: {
+        personal: {
+          ...this.state.editor.personal,
+        },
+        work: {
+          ...this.state.editor.work,
+        },
+        education: {
+          ...this.state.editor.education,
+          degree: {
+            ...this.state.editor.education.degree,
+            subject: e.target.value,
+          },
+        },
+      },
+    });
+  };
+
   //is there a way I can do just one single handleChange and pass values to grab which input it is inside of, which will then change the corresponding property of state?
   //man that would be so cool and DRY
 
@@ -362,6 +474,10 @@ class App extends Component {
             handleChangeFrom={this.handleChangeFrom}
             handleChangeTo={this.handleChangeTo}
             handleChangeDescription={this.handleChangeDescription}
+            handleChangeDegree={this.handleChangeDegree}
+            handleChangeSchool={this.handleChangeSchool}
+            handleChangeSubject={this.handleChangeSubject}
+            handleChangeYear={this.handleChangeYear}
             firstValue={editor.personal.first}
             lastValue={editor.personal.last}
             titleValue={editor.personal.title}
@@ -374,6 +490,10 @@ class App extends Component {
             fromValue={editor.work.job.from}
             toValue={editor.work.job.to}
             descriptionValue={editor.work.job.description}
+            degreeValue={editor.education.degree.degree}
+            schoolValue={editor.education.degree.school}
+            subjectValue={editor.education.degree.subject}
+            yearValue={editor.education.degree.year}
           />
           <Preview
             first={preview.personal.first}
@@ -384,6 +504,7 @@ class App extends Component {
             website={preview.personal.website}
             about={preview.personal.about}
             jobs={preview.work.jobs}
+            degrees={preview.education.degrees}
           />
         </div>
       </>

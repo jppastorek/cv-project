@@ -20,6 +20,10 @@ const Form = (props) => {
     handleChangeFrom,
     handleChangeTo,
     handleChangeDescription,
+    handleChangeDegree,
+    handleChangeSchool,
+    handleChangeSubject,
+    handleChangeYear,
     firstValue,
     lastValue,
     titleValue,
@@ -32,6 +36,10 @@ const Form = (props) => {
     fromValue,
     toValue,
     descriptionValue,
+    degreeValue,
+    schoolValue,
+    subjectValue,
+    yearValue,
   } = props;
 
   return (
@@ -66,7 +74,17 @@ const Form = (props) => {
         toValue={toValue}
         descriptionValue={descriptionValue}
       />
-      <Education submitEducation={submitEducation} />
+      <Education
+        submitEducation={submitEducation}
+        handleChangeDegree={handleChangeDegree}
+        handleChangeSchool={handleChangeSchool}
+        handleChangeSubject={handleChangeSubject}
+        handleChangeYear={handleChangeYear}
+        degreeValue={degreeValue}
+        schoolValue={schoolValue}
+        subjectValue={subjectValue}
+        yearValue={yearValue}
+      />
     </div>
   );
 };
