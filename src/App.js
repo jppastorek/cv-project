@@ -90,7 +90,9 @@ class App extends Component {
           ...this.state.editor.work,
         },
         education: {
-          degrees: this.state.editor.education.degrees.concat(this.state.editor.education.degree),
+          degrees: this.state.editor.education.degrees.concat(
+            this.state.editor.education.degree
+          ),
           degree: {
             degree: "",
             school: "",
@@ -108,7 +110,9 @@ class App extends Component {
           ...this.state.preview.work,
         },
         education: {
-          degrees: this.state.editor.education.degrees.concat(this.state.editor.education.degree),
+          degrees: this.state.editor.education.degrees.concat(
+            this.state.editor.education.degree
+          ),
         },
       },
     });
@@ -150,307 +154,303 @@ class App extends Component {
     });
   };
 
-  handleChangeFirst = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          first: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeLast = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          last: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeTitle = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          title: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeEmail = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          email: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeTel = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          tel: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeWebsite = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          website: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeAbout = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-          about: e.target.value,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeJobTitle = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-          job: {
-            ...this.state.editor.work.job,
-            title: e.target.value,
+  handleChangePersonal = (e) => {
+    switch (e.target.id) {
+      case "firstName":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              first: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeCompany = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-          job: {
-            ...this.state.editor.work.job,
-            company: e.target.value,
+        });
+        break;
+      case "lastName":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              last: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeFrom = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-          job: {
-            ...this.state.editor.work.job,
-            from: e.target.value,
+        });
+        break;
+      case "title":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              title: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeTo = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-          job: {
-            ...this.state.editor.work.job,
-            to: e.target.value,
+        });
+        break;
+      case "email":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              email: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeDescription = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-          job: {
-            ...this.state.editor.work.job,
-            description: e.target.value,
+        });
+        break;
+      case "tel":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              tel: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-        education: {
-          ...this.state.editor.education,
-        },
-      },
-    });
-  };
-
-  handleChangeDegree = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-          degree: {
-            ...this.state.editor.education.degree,
-            degree: e.target.value,
+        });
+        break;
+      case "site":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              website: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-      },
-    });
-  };
-
-  handleChangeSchool = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-          degree: {
-            ...this.state.editor.education.degree,
-            school: e.target.value,
+        });
+        break;
+      case "about":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+              about: e.target.value,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-      },
-    });
+        });
+        break;
+    }
   };
 
-  handleChangeYear = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-          degree: {
-            ...this.state.editor.education.degree,
-            year: e.target.value,
+  handleChangeWork = (e) => {
+    switch (e.target.id) {
+      case "jobTitle":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+              job: {
+                ...this.state.editor.work.job,
+                title: e.target.value,
+              },
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-      },
-    });
-  };
-
-  handleChangeSubject = (e) => {
-    this.setState({
-      editor: {
-        personal: {
-          ...this.state.editor.personal,
-        },
-        work: {
-          ...this.state.editor.work,
-        },
-        education: {
-          ...this.state.editor.education,
-          degree: {
-            ...this.state.editor.education.degree,
-            subject: e.target.value,
+        });
+        break;
+      case "company":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+              job: {
+                ...this.state.editor.work.job,
+                company: e.target.value,
+              },
+            },
+            education: {
+              ...this.state.editor.education,
+            },
           },
-        },
-      },
-    });
+        });
+        break;
+      case "from":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+              job: {
+                ...this.state.editor.work.job,
+                from: e.target.value,
+              },
+            },
+            education: {
+              ...this.state.editor.education,
+            },
+          },
+        });
+        break;
+      case "to":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+              job: {
+                ...this.state.editor.work.job,
+                to: e.target.value,
+              },
+            },
+            education: {
+              ...this.state.editor.education,
+            },
+          },
+        });
+        break;
+      case "description":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+              job: {
+                ...this.state.editor.work.job,
+                description: e.target.value,
+              },
+            },
+            education: {
+              ...this.state.editor.education,
+            },
+          },
+        });
+        break;
+    }
   };
 
-  //is there a way I can do just one single handleChange and pass values to grab which input it is inside of, which will then change the corresponding property of state?
-  //man that would be so cool and DRY
+  handleChangeEducation = (e) => {
+    switch (e.target.id) {
+      case "degree":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+              degree: {
+                ...this.state.editor.education.degree,
+                degree: e.target.value,
+              },
+            },
+          },
+        });
+        break;
+      case "school":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+              degree: {
+                ...this.state.editor.education.degree,
+                school: e.target.value,
+              },
+            },
+          },
+        });
+        break;
+      case "year":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+              degree: {
+                ...this.state.editor.education.degree,
+                year: e.target.value,
+              },
+            },
+          },
+        });
+        break;
+      case "subject":
+        this.setState({
+          editor: {
+            personal: {
+              ...this.state.editor.personal,
+            },
+            work: {
+              ...this.state.editor.work,
+            },
+            education: {
+              ...this.state.editor.education,
+              degree: {
+                ...this.state.editor.education.degree,
+                subject: e.target.value,
+              },
+            },
+          },
+        });
+        break;
+    }
+  }
 
   render() {
     const { editor, preview } = this.state;
@@ -462,22 +462,9 @@ class App extends Component {
             submitPersonal={this.onSubmitPersonal}
             submitEducation={this.onSubmitEducation}
             submitWork={this.onSubmitWork}
-            handleChangeFirst={this.handleChangeFirst}
-            handleChangeLast={this.handleChangeLast}
-            handleChangeTitle={this.handleChangeTitle}
-            handleChangeEmail={this.handleChangeEmail}
-            handleChangeTel={this.handleChangeTel}
-            handleChangeWebsite={this.handleChangeWebsite}
-            handleChangeAbout={this.handleChangeAbout}
-            handleChangeJobTitle={this.handleChangeJobTitle}
-            handleChangeCompany={this.handleChangeCompany}
-            handleChangeFrom={this.handleChangeFrom}
-            handleChangeTo={this.handleChangeTo}
-            handleChangeDescription={this.handleChangeDescription}
-            handleChangeDegree={this.handleChangeDegree}
-            handleChangeSchool={this.handleChangeSchool}
-            handleChangeSubject={this.handleChangeSubject}
-            handleChangeYear={this.handleChangeYear}
+            handleChangePersonal={this.handleChangePersonal}
+            handleChangeWork={this.handleChangeWork}
+            handleChangeEducation={this.handleChangeEducation}
             firstValue={editor.personal.first}
             lastValue={editor.personal.last}
             titleValue={editor.personal.title}

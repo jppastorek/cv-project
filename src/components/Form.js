@@ -8,22 +8,9 @@ const Form = (props) => {
     submitPersonal,
     submitEducation,
     submitWork,
-    handleChangeFirst,
-    handleChangeLast,
-    handleChangeTitle,
-    handleChangeEmail,
-    handleChangeTel,
-    handleChangeWebsite,
-    handleChangeAbout,
-    handleChangeJobTitle,
-    handleChangeCompany,
-    handleChangeFrom,
-    handleChangeTo,
-    handleChangeDescription,
-    handleChangeDegree,
-    handleChangeSchool,
-    handleChangeSubject,
-    handleChangeYear,
+    handleChangePersonal,
+    handleChangeWork,
+    handleChangeEducation,
     firstValue,
     lastValue,
     titleValue,
@@ -46,13 +33,7 @@ const Form = (props) => {
     <div className="form">
       <Personal
         submitPersonal={submitPersonal}
-        handleChangeFirst={handleChangeFirst}
-        handleChangeLast={handleChangeLast}
-        handleChangeTitle={handleChangeTitle}
-        handleChangeEmail={handleChangeEmail}
-        handleChangeTel={handleChangeTel}
-        handleChangeWebsite={handleChangeWebsite}
-        handleChangeAbout={handleChangeAbout}
+        handleChange={handleChangePersonal}
         firstValue={firstValue}
         lastValue={lastValue}
         titleValue={titleValue}
@@ -63,11 +44,7 @@ const Form = (props) => {
       />
       <Work
         submitWork={submitWork}
-        handleChangeJobTitle={handleChangeJobTitle}
-        handleChangeCompany={handleChangeCompany}
-        handleChangeFrom={handleChangeFrom}
-        handleChangeTo={handleChangeTo}
-        handleChangeDescription={handleChangeDescription}
+        handleChange={handleChangeWork}
         jobTitleValue={jobTitleValue}
         companyValue={companyValue}
         fromValue={fromValue}
@@ -76,10 +53,7 @@ const Form = (props) => {
       />
       <Education
         submitEducation={submitEducation}
-        handleChangeDegree={handleChangeDegree}
-        handleChangeSchool={handleChangeSchool}
-        handleChangeSubject={handleChangeSubject}
-        handleChangeYear={handleChangeYear}
+        handleChange={handleChangeEducation}
         degreeValue={degreeValue}
         schoolValue={schoolValue}
         subjectValue={subjectValue}

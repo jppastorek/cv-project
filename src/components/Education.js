@@ -7,10 +7,7 @@ const Education = (props) => {
     schoolValue,
     subjectValue,
     yearValue,
-    handleChangeDegree,
-    handleChangeSchool,
-    handleChangeSubject,
-    handleChangeYear,
+    handleChange,
   } = props;
 
   return (
@@ -23,17 +20,17 @@ const Education = (props) => {
             type="text"
             id="degree"
             value={degreeValue}
-            onChange={handleChangeDegree}
+            onChange={handleChange}
           />
         </div>
         <div className="input">
           <label htmlFor="grad">Year</label>
           <input
             type="text"
-            id="grade"
+            id="year"
             placeholder="yyyy"
             value={yearValue}
-            onChange={handleChangeYear}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -44,7 +41,7 @@ const Education = (props) => {
           type="text"
           id="subject"
           value={subjectValue}
-          onChange={handleChangeSubject}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
@@ -53,7 +50,7 @@ const Education = (props) => {
           type="text"
           id="school"
           value={schoolValue}
-          onChange={handleChangeSchool}
+          onChange={handleChange}
         />
       </div>
 

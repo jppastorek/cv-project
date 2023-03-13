@@ -3,13 +3,7 @@ import React from "react";
 const Personal = (props) => {
   const {
     submitPersonal,
-    handleChangeFirst,
-    handleChangeLast,
-    handleChangeTitle,
-    handleChangeEmail,
-    handleChangeTel,
-    handleChangeWebsite,
-    handleChangeAbout,
+    handleChange,
     firstValue,
     lastValue,
     titleValue,
@@ -26,22 +20,22 @@ const Personal = (props) => {
           <label htmlFor="first">First Name</label>
           <input
             type="text"
-            id="first"
+            id="firstName"
             name="first"
             placeholder="John"
             value={firstValue}
-            onChange={handleChangeFirst}
+            onChange={handleChange}
           />
         </div>
         <div className="input">
           <label htmlFor="last">Last Name</label>
           <input
             type="text"
-            id="last"
+            id="lastName"
             name="last"
             placeholder="Doe"
             value={lastValue}
-            onChange={handleChangeLast}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -53,7 +47,7 @@ const Personal = (props) => {
           name="title"
           placeholder="Job Title"
           value={titleValue}
-          onChange={handleChangeTitle}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
@@ -64,7 +58,7 @@ const Personal = (props) => {
           name="email"
           placeholder="johndoe@example.com"
           value={emailValue}
-          onChange={handleChangeEmail}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
@@ -75,7 +69,7 @@ const Personal = (props) => {
           name="tel"
           placeholder="555-555-5555"
           value={telValue}
-          onChange={handleChangeTel}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
@@ -86,16 +80,17 @@ const Personal = (props) => {
           name="website"
           placeholder="www.example.com"
           value={websiteValue}
-          onChange={handleChangeWebsite}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
         <label htmlFor="about">About</label>
         <textarea
           name="about"
+          id="about"
           placeholder="Write a short description about yourself..."
           value={aboutValue}
-          onChange={handleChangeAbout}
+          onChange={handleChange}
         />
       </div>
       <button type="submit" onClick={submitPersonal}>

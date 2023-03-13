@@ -3,11 +3,7 @@ import React from "react";
 const Work = (props) => {
   const {
     submitWork,
-    handleChangeJobTitle,
-    handleChangeCompany,
-    handleChangeFrom,
-    handleChangeTo,
-    handleChangeDescription,
+    handleChange,
     jobTitleValue,
     companyValue,
     fromValue,
@@ -22,9 +18,9 @@ const Work = (props) => {
         <label htmlFor="title">Title</label>
         <input
           type="text"
-          id="title"
+          id="jobTitle"
           value={jobTitleValue}
-          onChange={handleChangeJobTitle}
+          onChange={handleChange}
         />
       </div>
       <div className="input">
@@ -33,7 +29,7 @@ const Work = (props) => {
           type="text"
           id="company"
           value={companyValue}
-          onChange={handleChangeCompany}
+          onChange={handleChange}
         />
       </div>
       <div className="side-by-side">
@@ -41,29 +37,30 @@ const Work = (props) => {
           <label htmlFor="start">From</label>
           <input
             type="text"
-            id="start"
+            id="from"
             placeholder="yyyy"
             value={fromValue}
-            onChange={handleChangeFrom}
+            onChange={handleChange}
           />
         </div>
         <div className="input">
           <label htmlFor="end">To</label>
           <input
             type="text"
-            id="end"
+            id="to"
             placeholder="yyyy"
             value={toValue}
-            onChange={handleChangeTo}
+            onChange={handleChange}
           />
         </div>
       </div>
       <div className="input">
         <label htmlFor="job">Job Description</label>
         <textarea
+          id="description"
           placeholder="Write a short description about the work you did..."
           value={descriptionValue}
-          onChange={handleChangeDescription}
+          onChange={handleChange}
         />
       </div>
 
