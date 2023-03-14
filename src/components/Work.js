@@ -1,16 +1,14 @@
 import React from "react";
 
-const Work = (props) => {
-  const {
-    submitWork,
-    handleChange,
-    jobTitleValue,
-    companyValue,
-    fromValue,
-    toValue,
-    descriptionValue,
-  } = props;
-
+const Work = ({
+  submitWork,
+  handleChange,
+  jobTitleValue,
+  companyValue,
+  fromValue,
+  toValue,
+  descriptionValue,
+}) => {
   return (
     <form>
       <h2>Work Experience</h2>

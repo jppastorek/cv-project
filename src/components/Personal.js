@@ -1,17 +1,16 @@
 import React from "react";
 
-const Personal = (props) => {
-  const {
-    submitPersonal,
-    handleChange,
-    firstValue,
-    lastValue,
-    titleValue,
-    emailValue,
-    telValue,
-    websiteValue,
-    aboutValue,
-  } = props;
+const Personal = ({
+  submitPersonal,
+  handleChange,
+  firstValue,
+  lastValue,
+  titleValue,
+  emailValue,
+  telValue,
+  websiteValue,
+  aboutValue,
+}) => {
   return (
     <form>
       <h2>Personal Information</h2>

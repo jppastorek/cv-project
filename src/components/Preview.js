@@ -1,9 +1,16 @@
 import React from "react";
 
-const Preview = (props) => {
-  const { first, last, title, email, tel, website, about, jobs, degrees } =
-    props;
-
+const Preview = ({
+  first,
+  last,
+  title,
+  email,
+  tel,
+  website,
+  about,
+  jobs,
+  degrees,
+}) => {
   return (
     <>
       <div className="preview">

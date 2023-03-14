@@ -3,32 +3,30 @@ import Personal from "./Personal";
 import Work from "./Work";
 import Education from "./Education";
 
-const Form = (props) => {
-  const {
-    submitPersonal,
-    submitEducation,
-    submitWork,
-    handleChangePersonal,
-    handleChangeWork,
-    handleChangeEducation,
-    firstValue,
-    lastValue,
-    titleValue,
-    emailValue,
-    telValue,
-    websiteValue,
-    aboutValue,
-    jobTitleValue,
-    companyValue,
-    fromValue,
-    toValue,
-    descriptionValue,
-    degreeValue,
-    schoolValue,
-    subjectValue,
-    yearValue,
-  } = props;
-
+const Form = ({
+  submitPersonal,
+  submitEducation,
+  submitWork,
+  handleChangePersonal,
+  handleChangeWork,
+  handleChangeEducation,
+  firstValue,
+  lastValue,
+  titleValue,
+  emailValue,
+  telValue,
+  websiteValue,
+  aboutValue,
+  jobTitleValue,
+  companyValue,
+  fromValue,
+  toValue,
+  descriptionValue,
+  degreeValue,
+  schoolValue,
+  subjectValue,
+  yearValue,
+}) => {
   return (
     <div className="form">
       <Personal

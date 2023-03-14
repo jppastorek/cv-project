@@ -1,15 +1,13 @@
 import React from "react";
 
-const Education = (props) => {
-  const {
-    submitEducation,
-    degreeValue,
-    schoolValue,
-    subjectValue,
-    yearValue,
-    handleChange,
-  } = props;
-
+const Education = ({
+  submitEducation,
+  degreeValue,
+  schoolValue,
+  subjectValue,
+  yearValue,
+  handleChange,
+}) => {
   return (
     <form>
       <h2>Education</h2>
